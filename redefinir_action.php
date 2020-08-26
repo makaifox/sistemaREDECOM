@@ -11,4 +11,7 @@ if ($senha) {
     
     header("Location: login.html");
     exit;
+} else {
+    header("location: login.php");
+    exit;
 }

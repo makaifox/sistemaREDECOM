@@ -115,7 +115,7 @@ $usuarioByEmail = $user->selectArray($_SESSION['email']);
 
 $postArray = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRIPPED);
 
-$anexoMensagem = $_FILES['anexoDemanda']['size'] > 0 ? $anexoMensagem = "Anexo armazenado no redecom" : $anexoMensagem = "Anexo não enviado";
+$anexoMensagem = $_FILES['anexoDemanda']['size'] > 0 ? $anexoMensagem = "Arquivo anexado no email" : $anexoMensagem = "Anexo não enviado";
 $demandaMensagem = $postArray['demanda'] ? $demandaMensagem = $postArray['demanda'] : $demandaMensagem = 'Mensagem de demanda não enviada';
 $dataMensagem = $postArray['data'] ? $dataMensagem = $postArray['data'] : $demandaMensagem = "Data não enviada";
 $horaMensagem = $postArray['hora'] ? $horaMensagem = $postArray['hora'] : $horaMensagem = "Hora não enviada";
@@ -238,8 +238,6 @@ $mensagem = "
         </div>
     </fieldset>
 </div>";
-
-echo $mensagem;
     
 include './erro.php';
 
@@ -303,7 +301,7 @@ if($postArray) {
         $postArray['anexoDemanda'] = $fileName; 
         $postArray['id_usuario'] = $usuarioByEmail['id']; 
         
-        
+        /*
         switch($postArray['tipoDemanda']) {
             case 'imprensa':
                 foreach($emailFuncionarios['assessoriaDeImprensa'] as $email) {
@@ -346,7 +344,7 @@ if($postArray) {
             case 'impressao':
                 //$mail = new Email('governodemesquita@gmail.com', );
                 break;
-        } 
+        } */
 
        // $mail = new Email('governodemesquita@gmail.com', );
         
@@ -355,7 +353,7 @@ if($postArray) {
     }   
 } 
 
-//header("Location: pagina-usuario.php");
+header("Location: pagina-usuario.php");
 
 //$formulario->addForm($data);
 

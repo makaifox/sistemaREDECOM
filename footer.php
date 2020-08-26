@@ -1,85 +1,77 @@
-        <!-- Container element -->
-        <div class="parallax_MS">
+<style> 
+.footer-bg {
+    height: 20rem;  
+}    
+@media (max-width: 420px) {
+    .footer-bg  { 
+        height: 25rem;
+    }
 
-            <div class="container "> 
-               
-               <div class="row">
-               
-               <br>
-               </div>
-               
-                <div class="row align-self-center" >
-                    
-                    <div class="col" style=" max-height: 400px; "></div>
-                        <div class="col-6 justify-content-center ">
+}
+
+</style> 
 
 
-                            <span class="req col-5 "><h2>PMM - Prefeitura Municipal de Mesquita</h2></span>
+
+<!-- Footer -->
+    <footer class="page-footer font-small stylish-color-dark pt-4 parallax footer-bg " >
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+   
+
+  </div>
+  <!-- Footer Links -->
+
+ 
+        <span class="req col-5 "><h4>PMM - Prefeitura Municipal de Mesquita</h4></span>
                                                             <br/>
-                            <span class="req col-5"><h5>Desenvolvido por: CCS - Coordenadoria de Comunicação Social</h5></span>
-                                                            <br/>
-                                <div class="row justify-content-center" style=" max-height: 400px; ">
-                                            
-                                            <!--Facebook-->
-                                        <a href="https://www.facebook.com/prefeiturademesquita">
-                                            <button type="button" class="btn btn-fb btn-lg" >
-                                                <i class="fab fa-facebook-f"></i>
-                                            </button>
-                                        </a>
+        <span class="req col-5"><h6>Desenvolvido por: CCS - Coordenadoria de Comunicação Social</h6></span>
+  <!-- Call to action -->
 
-                                            <!--Twitter-->
-                                        <a href="https://twitter.com/mesquitarj">
-                                            <button type="button" class="btn  btn-tw btn-lg" >
-                                                <i class="fab fa-twitter"></i>
-                                            </button>
-                                        </a>
+  <hr>
 
-                                            <!--linkedin-->
-                                        <a href="https://www.linkedin.com/in/prefeiturademesquitarj">
-                                            <button type="button" class="btn  btn-in btn-lg" >
-                                                <i class="fab fa-linkedin-in"></i>
-                                            </button>
-                                        </a>
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center ">
+    <li class="list-inline-item">
+      <a href="https://bit.ly/3fWbhfC" class="btn-floating btn-fb mx-1 btn  ">
+        <i class="fab fa-facebook-f"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://www.instagram.com/prefmesquitacovid19/" class="btn-floating btn-tw mx-1 btn">
+        <i class="fab fa-instagram"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://twitter.com/pmmcovid19" class="btn-floating btn-gplus mx-1 btn">
+        <i class="fab fa-twitter"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://chat.whatsapp.com/HQ6ES5kycNA8aVJDN3Lnz8" class="btn-floating btn-li mx-1 btn">
+        <i class="fab fa-whatsapp"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://www.linkedin.com/company/prefeitura-de-mesquita-boletim-coronav%C3%ADrus/" class="btn-floating btn-dribbble mx-1 btn">
+        <i class="fab fa-linkedin"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://www.youtube.com/channel/UCXgKyvQithT0D1IrEsMMfrg?view_as=subscriber&sub_confirmation=1" class="btn-floating btn-dribbble mx-1 btn">
+        <i class="fab fa-youtube"> </i>
+      </a>
+    </li>
+  </ul>
+  <!-- Social buttons -->
 
-                                            <!--Instagram-->
-                                        <a href="https://www.instagram.com/prefeiturademesquitarj/">
-                                            <button type="button" class="btn   btn-ins btn-lg" >
-                                                <i class="fab fa-instagram"></i>
-                                            </button>
-                                        </a>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 req "><h6>Desenvolvimento:
+CCS - Coordenadoria de Comunicação Social</h6>
+  </div>
+  <!-- Copyright -->
 
-                            
-                                            <!--behance-->
-                                        <a href="https://www.behance.net/prefeiturademesquita">
-                                            <button type="button" class="btn  btn-be btn-lg" >
-                                                <i class="fab fa-behance"></i>
-                                            </button>
-                                        </a>
-                  
-                                            <!--Instagram-->
-                                        <a href="https://soundcloud.com/radiomesquita">
-                                            <button type="button" class="btn  btn-sc btn-lg" >
-                                                <i class="fab fa-soundcloud"></i>
-                                            </button>
-                                        </a>
-                                            
-                                            <!--behance-->
-                                        <a href="https://www.youtube.com/prefeiturademesquitarj">
-                                            <button type="button" class="btn  btn-yt btn-lg" >
-                                                <i class="fab fa-youtube Midi-ico"></i>
-                                            </button>
-                                        </a>
-                            
-                            
-                                            
-                                </div>
-                                                <br>    
-                        </div>             
-                    <div class="col" style=" max-height: 400px; "></div>
-                    
-                    </div>
-                </div>
-            
-            </div>         
-        
-        </div>
+</footer>
+<!-- Footer -->

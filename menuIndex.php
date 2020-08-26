@@ -24,7 +24,7 @@
         }else if($permissao == 1 || $permissao == 2){
             echo '<a href="admin.php" class="nav-link princ">PÁGINA DO ADMINISTRADOR</a>';
         } else {
-            echo '<a href="login.html" class="nav-link princ">FAÇA LOGIN</a>';
+            echo '<a href="newlogin.php" class="nav-link princ">FAÇA LOGIN</a>';
         }
     ?>
     </li>

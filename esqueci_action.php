@@ -22,78 +22,15 @@ if($email) {
     $user = new Usuario($pdo);
     $select = $user->selectArray($email);
     if($select) {
-        $id = $select['id'];
-        $token = md5(time().rand(0,9999).rand(0,9999));
-        $data = date('Y-m-d H:i', strtotime('+2 hours'));
-        $userToken = new UsuarioToken($pdo);
-        $userToken->adicionarUsuarioToken($id, $token, $data);
-        $buscaToken = $userToken->buscaToken($id);
-        
-        if($userToken->selectArrayToken($token)) {
-            $link = '<a href="http://localhost/login_redecom_2/verifica_token.php?token='.$buscaToken.'">link</a>';
-    
-            $mensagem =  "Clique no link para redefinir sua senha:<br>".$link;
-    
-            $titulo = "Redefinição de senha";
-    
-            $headers = "From: weslley.leite@mesquita.rj.gov.br"."\r\n".
-                        "Reply-To: ".$email."\r\n".
-                        "X-Mailer: PHP/".phpversion();
-    
-            /*mail($email, $assunto, $mensagem, $headers);
-            echo $mensagem."<br>";
-            echo $buscaToken;
-            echo 'teste';*/
-
-
-            //var_dump($mail1);
-            $mensagem = '<h1>Redefinição de Senha</h1>
-                        <p>Clique no Link abaixo para redefinir sua senha</p>
-                        <a href="http://localhost/login_redecom_2/verifica_token.php?token='.$buscaToken.'">Clique Aqui!</a>';
-
-            $mail1 = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo);
-           
-            var_dump($mail1);
-
-
-        } else{
-
-            $link = '<a href="http://localhost/login_redecom_2/verifica_token.php?token='.$buscaToken.'">link</a>';
-    
-            $mensagem =  "Clique no link para redefinir sua senha:<br>".$link;
-    
-            $titulo = "Redefinição de senha";
-    
-            $headers = "From: weslley.leite@mesquita.rj.gov.br"."\r\n".
-                        "Reply-To: ".$email."\r\n".
-                        "X-Mailer: PHP/".phpversion();
-            
-            //$email = mail($email, $assunto, $mensagem, $headers);
-            /*if($email) {
-                header("Location:index.php");
-                //msg sucesso
-            } else {
-                header("Location: index.php");
-                //msg erro
-            }*/
-            /*$newDate = date("Y-m-d H:i", strtotime('+2 hours' ));
-            echo $newDate;
-            echo $mensagem."<br>";
-            echo $buscaToken;*/
-            $mensagem = '<h1>Redefinição de Senha</h1>
-                        <p>Clique no Link abaixo para redefinir sua senha</p>
-                        <a href="http://localhost/login_redecom_2/verifica_token.php?token='.$buscaToken.'">Clique Aqui!</a>';
-
-            $mail2 = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo);
-            //echo $mensagem;
-            var_dump($mail2);
-            
-        }
-
+        $_SESSION['idSenha'] = $select['id'];
+        header("location: redefinir.php");
+        echo $select['id'];
     } else {
-        header("Location: esqueci.html");
-        exit;
+        header("location: login.php");
     }
-}
+
+} else {
+    header("location: login.php");
+} 
 
 ?>

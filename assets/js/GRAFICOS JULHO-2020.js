@@ -9,12 +9,13 @@ google.charts.setOnLoadCallback(graficoREQ);
 function graficoREQ() {
 
    // opções de tamanho, titulo e legendas.
-   var options = { 
+   var options = {
+              
       
-                   };
+                  };
  
    // escolhe o modelo do gáfico.
-   var chart = new google.visualization.PieChart(document.getElementById('grafico_REQ-ABR20'));
+   var chart = new google.visualization.PieChart(document.getElementById('grafico_REQ-JUL20'));
  
    (async () => {
     let chartData;
@@ -26,28 +27,37 @@ function graficoREQ() {
            const json = jsonBody;
            return json;
       })
+
+     
  
         // Criar tabela
        var data = google.visualization.arrayToDataTable([
           ['Element', 'secretarias', { role: 'style' }],
  
              // barras
-             ['SEMGOV', chartData['Abril']['requerimentos'][0]['semgov'],'#ff0000'],
-             ['SEMUS', chartData['Abril']['requerimentos'][0]['semus'], '#9d2424' ],
-             ['SEMAS', chartData['Abril']['requerimentos'][0]['semas'],'#f5e70d'],
-             ['SEMED', chartData['Abril']['requerimentos'][0]['semed'], '#ada746' ],
-             ['SEMSOPC', chartData['Abril']['requerimentos'][0]['semsopc'],'#007eff'],
-             ['SETRADE', chartData['Abril']['requerimentos'][0]['setrade'], '#1c2e9a' ],
-             ['GABINETE', chartData['Abril']['requerimentos'][0]['gabineteDoPrefeito'],'#a588dc'],
-             ['PROCON', chartData['Abril']['requerimentos'][0]['procon'], '#60409f' ],
-             ['FORUM', chartData['Abril']['requerimentos'][0]['forum'], '#BFEB01' ],
-             ['SEMCELT', chartData['Abril']['requerimentos'][0]['semcelt'], '#F5980A' ],
-             ['SEMEF', chartData['Abril']['requerimentos'][0]['semef'],'#09DAEB'],
-             ['SEMMURB', chartData['Abril']['requerimentos'][0]['semmurb'], '#08EB36' ],
-             ['DEFESA CIVIL', chartData['Abril']['requerimentos'][0]['defesaCivil'], '#084A36' ]// título , valor, cor 
-               //console.log(chartData['Abril']['requerimentos'][0])
-            ]);      
+            ['SEMGOV', chartData['julho']['requerimentos'][0]['semgov'],'#ff0000'],
+            ['SEMUS', chartData['julho']['requerimentos'][0]['semus'], '#9d2424' ],
+            ['SEMAS', chartData['julho']['requerimentos'][0]['semas'],'#f5e70d'],
+            ['SEMED', chartData['julho']['requerimentos'][0]['semed'], '#ada746' ],
+            ['SEMSOPC', chartData['julho']['requerimentos'][0]['semsopc'],'#007eff'],
+            ['SETRADE', chartData['julho']['requerimentos'][0]['setrade'], '#1c2e9a' ],
+            ['GABINETE', chartData['julho']['requerimentos'][0]['gabineteDoPrefeito'],'#a588dc'],
+            ['PROCON', chartData['julho']['requerimentos'][0]['procon'], '#60409f' ],
+            ['FORUM', chartData['julho']['requerimentos'][0]['forum'], '#BFEB01' ],
+            ['SEMCELT', chartData['julho']['requerimentos'][0]['semcelt'], '#F5980A' ],
+            ['SEMEF', chartData['julho']['requerimentos'][0]['semef'],'#09DAEB'],
+            ['SEMMURB', chartData['julho']['requerimentos'][0]['semmurb'], '#08EB36' ],
+            ['DEFESA CIVIL', chartData['julho']['requerimentos'][0]['defesaCivil'], '#084A36' ]// título , valor, cor 
+            //console.log(chartData['julho']['requerimentos'][0])
+         ]);      
  
+
+         $(window).resize(function(){
+            graficoREQ();
+            
+          });
+
+
       chart.draw(data, options);
   })();
  
@@ -69,7 +79,7 @@ function graficoREQ() {
                           
     
            // escolhe o modelo do gáfico.
-           var chart = new google.visualization.BarChart(document.getElementById('grafico_I-ABR20'));
+           var chart = new google.visualization.BarChart(document.getElementById('grafico_I-JUL20'));
     
            (async () => {
              let chartData;
@@ -87,8 +97,8 @@ function graficoREQ() {
              ['Produto', 'Imp',  { role: 'style' }],
      
                 // barras
-             ['CONTEÚDOS', chartData['Abril']['imprensa'][0]['conteudos'],'#ff0000'],
-             ['CLIPPINGS', chartData['Abril']['imprensa'][0]['clipings'], '#9d2424' ] // título , valor, cor 
+             ['CONTEÚDOS', chartData['julho']['imprensa'][0]['conteudos'],'#ff0000'],
+             ['CLIPPINGS', chartData['julho']['imprensa'][0]['clipings'], '#9d2424' ] // título , valor, cor 
           ]);            
          
                chart.draw(data, options);
@@ -114,15 +124,15 @@ google.charts.setOnLoadCallback(graficoDG);
       ]);
 
      // opções de tamanho, titulo e legendas.
-        var options = {
-         
-        legend: { position: 'none'},
-        bar: { groupWidth: '75%' },
-        isStacked: true
-      };
+     var options = {
+      
+                    legend: { position: 'none'},
+                    bar: { groupWidth: '75%' },
+                    isStacked: true
+                  };
 
         // escolhe o modelo do gáfico.
-        var chart = new google.visualization.BarChart(document.getElementById('grafico_DG-ABR20'));
+        var chart = new google.visualization.BarChart(document.getElementById('grafico_DG-JUL20'));
 
         (async () => {
          let chartData;
@@ -140,8 +150,8 @@ google.charts.setOnLoadCallback(graficoDG);
          ['Produto', 'Imp',  { role: 'style' }],
  
             // barras
-         ['ARTES', chartData['Abril']['design'][0]['artes'],'#f5e70d'],
-         ['IMPRESSÕES', chartData['Abril']['design'][0]['impressoes'], '#ada746' ] // título , valor, cor 
+         ['ARTES', chartData['julho']['design'][0]['artes'],'#f5e70d'],
+         ['IMPRESSÕES', chartData['julho']['design'][0]['impressoes'], '#ada746' ] // título , valor, cor 
       ]);            
            chart.draw(data, options);
        })();
@@ -169,14 +179,14 @@ google.charts.setOnLoadCallback(graficoDG);
  ]);
 
   // opções de tamanho, titulo e legendas.
-   var options = { 
-      
-   legend: {  position: 'none' },
-   bar: { groupWidth: '75%' },
-   isStacked: true
- };
+  var options = {
+   
+                 legend: { position: 'none'},
+                 bar: { groupWidth: '75%' },
+                 isStacked: true
+               };
    // escolhe o modelo do gáfico.
-   var chart = new google.visualization.BarChart(document.getElementById('grafico_FA-ABR20'));
+   var chart = new google.visualization.BarChart(document.getElementById('grafico_FA-JUL20'));
 
    (async () => {
       let chartData;
@@ -194,8 +204,8 @@ google.charts.setOnLoadCallback(graficoDG);
       ['Produto', 'Imp',  { role: 'style' }],
 
          // barras
-      ['COBERTURAS', chartData['Abril']['fotografia'][0]['cobertura'],'#007eff'],
-      ['MATERIAL', chartData['Abril']['fotografia'][0]['material'], '#1c2e9a' ] // título , valor, cor 
+      ['COBERTURAS', chartData['julho']['fotografia'][0]['cobertura'],'#007eff'],
+      ['MATERIAL', chartData['julho']['fotografia'][0]['material'], '#1c2e9a' ] // título , valor, cor 
    ]);            
         chart.draw(data, options);
     })();
@@ -234,7 +244,7 @@ chart.draw(data, options);
  };
 
    // escolhe o modelo do gáfico.
-   var chart = new google.visualization.BarChart(document.getElementById('grafico_MS-ABR20'));
+   var chart = new google.visualization.BarChart(document.getElementById('grafico_MS-JUL20'));
 
    (async () => {
       let chartData;
@@ -252,8 +262,8 @@ chart.draw(data, options);
          ['Produto', 'MS', { role: 'style' }],
             // barras
             
-         ['SEGUIDORES', chartData['Abril']['social'][0]['seguidores'] ,'#a588dc'],
-         ['ALCANCE', chartData['Abril']['social'][0]['alcance'] , '#60409f' ] // título , valor, cor 
+         ['SEGUIDORES', chartData['julho']['social'][0]['seguidores'] ,'#a588dc'],
+         ['ALCANCE', chartData['julho']['social'][0]['alcance'] , '#60409f' ] // título , valor, cor 
       ]);
       
         chart.draw(data, options);

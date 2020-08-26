@@ -10,7 +10,7 @@ function graficoREQ() {
 
    // opções de tamanho, titulo e legendas.
    var options = {
-      chartArea:{width:"90%",height:"80%"},
+      
          };
  
    // escolhe o modelo do gáfico.
@@ -60,7 +60,7 @@ function graficoREQ() {
 
       // opções de tamanho, titulo e legendas.
            var options = {
-            chartArea:{width:"90%",height:"80%"},
+            
                           'width':620, 
                           'height':300,
                           legend: { position: 'none'},
@@ -116,7 +116,7 @@ google.charts.setOnLoadCallback(graficoDG);
 
      // opções de tamanho, titulo e legendas.
         var options = {
-         chartArea:{width:"90%",height:"80%"},
+         
         legend: { position: 'none'},
         bar: { groupWidth: '75%' },
         isStacked: true
@@ -171,7 +171,7 @@ google.charts.setOnLoadCallback(graficoDG);
 
   // opções de tamanho, titulo e legendas.
    var options = {
-      chartArea:{width:"90%",height:"80%"},
+      
    legend: {  position: 'none' },
    bar: { groupWidth: '75%' },
    isStacked: true
@@ -222,7 +222,7 @@ chart.draw(data, options);
 
   // opções de tamanho, titulo e legendas.
    var options = {
-      chartArea:{width:"85%",height:"70%"},
+      
    legend: {  position: 'none' },
    bar: { groupWidth: '75%' },
    isStacked: true,
@@ -264,10 +264,3 @@ chart.draw(data, options);
 chart.draw(data, options);
 }
 //---------------------------------------------------------------------------------------------------
-$(window).resize(function(){
-   graficoREQ();
-   graficoI();
-   graficoDG();
-   graficoFA();
-   graficoMS();
- });
