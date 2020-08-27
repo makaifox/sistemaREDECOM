@@ -107,14 +107,14 @@ include 'newpainel.php'
                         <td>
                             <a href="visualizarusuario.php?id=<?= $usuario['id']; ?>">
                                 
-                                <img src="./assets/img/icone-visualizar.png" width="30px"  alt="visualizar">
+                                <img src="./assets/img/icone-visualizar.png" class="img-fluid img-ico" alt="visualizar">
                             </a>
                             <?php if($permissao == 1):  ?>   
                                 <a href="setar-adm.php?id=<?= $usuario['id']; ?>" target="_blank">
-                                    <img src="./assets/img/add-adm.png" width="30px">
+                                    <img src="./assets/img/add-adm.png" class="img-fluid img-ico" >
                                 </a>
                                 <a href="excluir.php?id=<?= $usuario['id']; ?>" class="<?= $usuario['id']; ?>">
-                                    <img src="./assets/img/icone-excluir.png" width="30px" alt="excluir">
+                                    <img src="./assets/img/icone-excluir.png" class="img-fluid img-ico"  alt="excluir">
                                     
                             
                                 </a>
@@ -374,7 +374,7 @@ include 'newpainel.php'
                                                 <div class="modal-content-admin">
                                                     <div class="container-content-admin">
                                                         <p>Clique em confirmar para excluir</p>
-                                                            <div class="img-modal-container">
+                                                            <div class="img-modal-container modal-footer">
                                                                 <a class="link-img-modal" href="">
                                                                     <img  src="./assets/img/icon-ok.png" alt="confirmar" width="50px">
                                                                     
@@ -386,7 +386,10 @@ include 'newpainel.php'
                                             </div>
     </div>
 
-    <div class="modal-container-setar-admin">
+
+
+    
+    <div class="modal-container-setar-admin col">
                                             <div class="modal-setar-admin">
                                                 <div class="close-modal">
                                                     <span class="material-icons">
@@ -399,13 +402,14 @@ include 'newpainel.php'
     
                                                         <label>Escolha o nível de acesso:</label>
                                                         <input class="hidden-input-setar-admin" name="idUsuario" type="hidden" value="">
-                                                        <select name="nivel-acesso">
+                                                        <select name="nivel-acesso form-control">
                                                             <option value="1">Administrador</option>
                                                             <option value="2">Moderador</option>
                                                             <option value="0">Usuário</option>
                                                         </select><br>
-
-                                                        <input type="submit" value="Adicionar">
+                                                        <div class="modal-footer">
+                                                            <input type="submit" class="btn" value="Adicionar">
+                                                        </div>
                                                     </form>
                                                     </div>
                                                     

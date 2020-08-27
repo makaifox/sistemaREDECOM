@@ -180,8 +180,16 @@ if(isset($_GET['id'])) {
                                                         </fieldset>
 
                                                         <fieldset>
-                                                            <legend> 5 - MATERIAL DE REFERÊNCIA</legend>
-                                                            <span>ARQUIVOS ANEXO : </span> <a href="./arquivos/<?php echo $nomeAnexoDemanda;  ?>" class="btn" download>Download Anexo</a> 
+                                                            <legend> 5 - MATERIAL DE REFERÊNCIA </legend>
+                                                            <span>ARQUIVOS ANEXO : </span> <?php if($info[$keys]['anexoDemanda']) {
+                                                                echo "<a class='btn' href='./arquivos/{$nomeAnexoDemanda}'  download>Download Anexo</a> ";
+                                                                echo "<pre>";
+                                                                print_r($info[$keys]['anexoDemanda']);
+                                                                               
+                                                            } else {
+                                                                echo "<span style='font-weight: bold;'> Arquivo não enviado </span>";
+                                                            }
+                                                            ?>
                                                         </fieldset>
 
                                                         <fieldset>

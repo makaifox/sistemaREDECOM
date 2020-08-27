@@ -275,15 +275,17 @@ if($postArray) {
                 'video/wmv',
                 'video/mp4',
             ];
-            $fileName = time().mb_strstr($fileUpload['name'], ".");
             
             if(in_array($fileUpload['type'], $filePermitidos)) {
+                $fileName = time().mb_strstr($fileUpload['name'], ".");
             
                 move_uploaded_file($fileUpload['tmp_name'], 'arquivos/'.$fileName);
- 
-            
+
+                $postArray['anexoDemanda'] = $fileName;
+         
             } else {
                 $_SESSION['msg']['anexoDemandaType'] = "Tipo de arquivo selecionado não permitido!";
+                $postArray['anexoDemanda'] = null;
             }
         
         } elseif($_FILES['anexoDemanda']['size'] > 3276800) {
@@ -298,57 +300,56 @@ if($postArray) {
         $saveStrip = array_map("strip_tags", $postArray);
         $save = array_map("trim", $postArray);
         $_SESSION['msg']['cadastroSucesso'] = "Cadastro Realizado com Sucesso!";
-        $postArray['anexoDemanda'] = $fileName; 
         $postArray['id_usuario'] = $usuarioByEmail['id']; 
+        $formulario->addForm($postArray);
         
         /*
         switch($postArray['tipoDemanda']) {
             case 'imprensa':
                 foreach($emailFuncionarios['assessoriaDeImprensa'] as $email) {
-                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo);
+                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo, $postArray['anexoDemanda']);
                 }
                 break;
+
             case 'design':
                 foreach($emailFuncionarios['designGrafico'] as $email) {
-                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo);
+                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo, $postArray['anexoDemanda']);
                 }
-                $mail = new Email('governodemesquita@gmail.com', );
                 break;
+
             case 'social':
                 foreach($emailFuncionarios['midiaSocial'] as $email) {
-                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo);
-                }
-                $mail = new Email('governodemesquita@gmail.com', );
+                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo, $postArray['anexoDemanda']);
+                }   
                 break;
+
             case 'fotografia':
                 foreach($emailFuncionarios['fotografia'] as $email) {
-                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo);
-                    echo $email.'<br>';
+                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo, $postArray['anexoDemanda'];
                 }
-                //$mail = new Email('governodemesquita@gmail.com', );
                 break;
+
             case 'video':
                 foreach($emailFuncionarios['audioVisual'] as $email) {
-                    new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo);
-                    echo $mensagem;
-                   
+                    new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo, $postArray['anexoDemanda']);              
                 }
-                //$mail = new Email('governodemesquita@gmail.com', );
                 break;
+
             case 'web':
                 foreach($emailFuncionarios['desenvolvimentoWeb'] as $email) {
-                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo);
+                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo, $postArray['anexoDemanda']);
                 }
-                //$mail = new Email('governodemesquita@gmail.com', );
                 break;
+
             case 'impressao':
-                //$mail = new Email('governodemesquita@gmail.com', );
+                foreach($emailFuncionarios['impressao'] as $email) {
+                    $mail = new Email('governodemesquita@gmail.com', $email, $mensagem, $titulo, $postArray['anexoDemanda']);
+                }   
                 break;
         } */
 
-       // $mail = new Email('governodemesquita@gmail.com', );
+      
         
-        $formulario->addForm($postArray);
 
     }   
 } 

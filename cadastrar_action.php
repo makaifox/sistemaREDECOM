@@ -15,7 +15,7 @@ if($nome && $email && $senha && $tel) {
         $user = new Usuario($pdo);
         $user->add($nome, $email, $senha, $tel);
         
-        header("Location: login.html");
+        header("Location: newlogin.php");
         exit;
     } else {
         $_SESSION['cadastro_erro'] = "Confirmação de senha ou email incorreta.";

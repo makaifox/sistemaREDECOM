@@ -38,7 +38,9 @@ if(!$email) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    
       rel="stylesheet">
+      
     <title>Bem vindo</title>
 </head>
 <body>
@@ -401,3 +403,4 @@ include 'newpainel-fim.php';
 <script src="./assets/js/modal.js"></script>
 </body>
 </html>
+

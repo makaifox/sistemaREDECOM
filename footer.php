@@ -2,9 +2,16 @@
 .footer-bg {
     height: 20rem;  
 }    
-@media (max-width: 420px) {
+@media (max-width: 426px) {
     .footer-bg  { 
-        height: 25rem;
+      height: 23rem;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .footer-bg  { 
+        height: 24rem;
     }
 
 }
